@@ -1,11 +1,8 @@
 import smtplib,getpass,email.utils,os
 from email.mime.text import MIMEText
 os.system("toilet 'The_end' |lolcat")    
-os.system('echo "Github: https://github.com/ian-gpx-c3der/" |lolcat ')
 print("")
-os.system('echo "Youtube:https://www.youtube.com/channel/UC5Cwlqhv-PtzXi61cZrv0uw" |lolcat ')
 print("")
-os.system('echo "Discord:The end#0007" |lolcat ')
 os.system('echo "________________________________________________________________" |lolcat ')
 print("")   
 x = int(input("quantia a enviar "))
